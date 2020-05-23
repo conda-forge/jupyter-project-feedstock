@@ -19,14 +19,14 @@ requirements:
     - jupyter-packaging
     - jupyterlab ~=1.2
     - nodejs
-    - python ~=3.5
+    - python ~=3.6
     - pip
   run:
     - cookiecutter
     - jinja2 ~=2.9
     - jsonschema
     - jupyterlab ~=1.2
-    - python ~=3.5
+    - python ~=3.6
 
 test:
   requires:
