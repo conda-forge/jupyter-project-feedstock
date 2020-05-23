@@ -1,5 +1,5 @@
 {% set name = "jupyter-project" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 379bf82a815c5be5896b8b8103013cae8ba5bd83d738d2d8d3901aa36e49dcf2
+  sha256: 50edad0efa6c7dc26f49fc232d13f06411bc5272d714b260975e8667e082b87c
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
@@ -43,7 +43,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'An JupyterLab extension to handle project and files templates; optionally coupled with an conda environment.'
+  summary: An JupyterLab extension to handle project and files templates; optionally coupled with an conda environment.
   description: |
     An JupyterLab extension to handle (a unique) project and files templates. It adds the ability
     to generate projects from a cookiecutter <https://cookiecutter.readthedocs.io/en/latest/> 
