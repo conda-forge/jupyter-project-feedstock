@@ -1,5 +1,5 @@
 {% set name = "jupyter-project" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 8d498bb52bca8fe9ab2386144215cac99e7989f7529cc1b3510aced7f2404eb2
+  sha256: c929f464708a14073fb0cb0631f0e5bf9fff3616465a14e07fdc207473f6883d
 
 build:
   noarch: python
