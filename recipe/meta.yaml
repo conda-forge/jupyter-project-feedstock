@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|replace("-", "_") }}-{{ version }}.tar.gz
   sha256: c929f464708a14073fb0cb0631f0e5bf9fff3616465a14e07fdc207473f6883d
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
@@ -19,18 +19,19 @@ requirements:
     - jupyter-packaging
     - jupyterlab ~=1.2
     - nodejs
-    - python ~=3.6
+    - python {{ python_min }}
     - pip
   run:
     - cookiecutter
     - jinja2 ~=2.9
     - jsonschema
     - jupyterlab ~=1.2
-    - python ~=3.6
+    - python >={{ python_min }}
 
 test:
   requires:
     - nodejs
+    - python {{ python_min }}
   imports:
     - jupyter_project
   commands:
